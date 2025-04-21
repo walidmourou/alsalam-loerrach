@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import LanguageSwitcher from "./LanguageSwitcher";
+import LangSwitcher from "./LangSwitcher";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -43,9 +43,7 @@ const Header = () => {
             <Link
               to="/about"
               className={`font-bold px-3 py-2 rounded-md ${
-                isLinkActive("/about")
-                  ? "bg-green-100"
-                  : "hover:bg-green-50"
+                isLinkActive("/about") ? "bg-green-100" : "hover:bg-green-50"
               }`}
             >
               {t("about.title")}
@@ -91,7 +89,7 @@ const Header = () => {
             </svg>
           </button>
 
-          <LanguageSwitcher />
+          <LangSwitcher />
         </div>
 
         {/* Mobile Navigation */}
@@ -100,9 +98,7 @@ const Header = () => {
             <Link
               to="/about"
               className={`block font-bold px-3 py-2 rounded-md ${
-                isLinkActive("/about")
-                  ? "bg-green-100"
-                  : "hover:bg-green-50"
+                isLinkActive("/about") ? "bg-green-100" : "hover:bg-green-50"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >

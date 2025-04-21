@@ -24,10 +24,6 @@ const locales = {
   fr,
 };
 
-function capitalizeFirstLetter(str: string) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
 export default function PrayerTimes() {
   const { t, i18n } = useTranslation();
   const [prayerTimes, setPrayerTimes] = useState<PrayerTimesData | null>(null);
