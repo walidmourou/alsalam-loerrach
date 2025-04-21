@@ -1,0 +1,114 @@
+{
+  "welcome": "Willkommen bei Al Salam",
+  "subtitle": "Islamisches Zentrum Brombach-Lörrach",
+  "heroTitle": "Ein Ort des Friedens und der Gemeinschaft",
+  "heroSubtitle": "Entdecken Sie unsere vielfältigen Angebote für die muslimische Gemeinschaft in Lörrach",
+  "dailyPrayers": "Tägliche Gebete",
+  "prayersDesc": "Gemeinsame Gebete in einer friedlichen Atmosphäre",
+  "quranLessons": "Koran-Unterricht",
+  "lessonsDesc": "Lernen Sie den Koran mit qualifizierten Lehrern",
+  "community": "Gemeinschaft",
+  "communityDesc": "Ein Ort der Begegnung für alle Muslime",
+  "prayerTimes": "Gebetszeiten",
+  "fajr": "Fadschr",
+  "sunrise": "Sonnenaufgang",
+  "dhuhr": "Dhuhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "services": "Unsere Dienste",
+  "contact": "Kontakt",
+  "address": "Adresse",
+  "phone": "Telefon",
+  "email": "E-Mail",
+  "footerText": "Ein Ort der Begegnung, des Gebets und des Lernens",
+  "copyRight": "Al Salam Islamic Center Brombach Lörrach",
+  "hijriMonths": {
+    "muharram": "Muharram",
+    "safar": "Safar",
+    "rabialawal": "Rabi al-Awal",
+    "rabialthani": "Rabi al-Thani",
+    "jumadalawal": "Jumada al-Awal",
+    "jumadalthani": "Jumada al-Thani",
+    "rajab": "Rajab",
+    "shaban": "Shaban",
+    "ramadan": "Ramadan",
+    "shawwal": "Shawwal",
+    "dhualqida": "Dhu al-Qida",
+    "dhualhijja": "Dhu al-Hijja"
+  },
+  "about": {
+    "title": "Über uns",
+    "subtitle": "Der Moscheeverein Alsalam Lörrach - Eine Säule des Glaubens und der Gemeinschaft",
+    "description": "Der Moscheeverein Alsalam Lörrach ist ein fundamentales und dynamisches Fundament im Herzen der muslimischen Gemeinschaft unserer Region. Verwurzelt in Prinzipien des Glaubens, der Brüderlichkeit und der Offenheit, engagiert sich unser Verein für die spirituellen, sozialen und bildungsbezogenen Bedürfnisse seiner Mitglieder und darüber hinaus.",
+    "mission": {
+      "title": "Unsere Mission",
+      "description": "Unsere vorrangige Mission ist es, einen würdigen und einladenden Ort der Andacht zu bieten, der die friedliche Ausübung des Islams fördert. Wir bemühen uns, die Bande der Solidarität und gegenseitigen Hilfe innerhalb der lokalen muslimischen Gemeinschaft zu stärken und gleichzeitig Brücken des Verständnisses und des Respekts zu anderen Teilen unserer Gesellschaft zu bauen. Durch unsere Initiativen wollen wir ein aufgeklärtes und positives Bild des Islams fördern, das auf Wissen, Dialog und bürgerschaftlichem Engagement basiert."
+    },
+    "vision": {
+      "title": "Unsere Vision",
+      "description": "Wir streben danach, ein strahlendes Gemeinschaftszentrum zu sein, in dem Spiritualität, Bildung und soziales Engagement harmonisch zusammenkommen. Wir sehen eine aufgeblühte muslimische Gemeinschaft vor uns, die gut integriert und aktiv in das lokale soziale Gefüge eingebunden ist und positiv zum kulturellen Reichtum und zum Wohlergehen aller Einwohner unserer Region beiträgt. Wir haben den Anspruch, eine Referenz im Bereich des interkulturellen und interreligiösen Dialogs zu werden und uns für ein friedliches und bereicherndes Zusammenleben einzusetzen."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "description": "Unsere Handlungen und Initiativen werden von einer Reihe grundlegender Werte geleitet:",
+      "item_nbr": 5,
+      "item1": {
+        "title": "Der Glaube und die Frömmigkeit",
+        "description": "Gott in den Mittelpunkt unseres Lebens stellen und gemäß den Lehren des Islams handeln."
+      },
+      "item2": {
+        "title": "Die Brüderlichkeit und die Solidarität",
+        "description": "Bande des gegenseitigen Respekts, der Hilfe und der Unterstützung innerhalb der Gemeinschaft pflegen."
+      },
+      "item3": {
+        "title": "Die Offenheit und der Dialog",
+        "description": "Einen konstruktiven Austausch, das Verständnis und den Respekt vor Unterschieden fördern."
+      },
+      "item4": {
+        "title": "Die Bildung und das Wissen",
+        "description": "Das kontinuierliche Lernen und die Verbreitung eines aufgeklärten Verständnisses des Islams fördern."
+      },
+      "item5": {
+        "title": "Das Gemeinschaftsengagement",
+        "description": "Aktiv am lokalen Leben teilnehmen und zum Wohlergehen der Gesellschaft als Ganzes beitragen."
+      }
+    },
+    "activities": {
+      "title": "Unsere Aktivitäten",
+      "description": "Konkretisiert wird unser Engagement durch eine Vielfalt an wesentlichen Aktivitäten:",
+      "item_nbr": 6,
+      "item1": {
+        "title": "Verwaltung der Moschee",
+        "description": "Wir sorgen gewissenhaft für die Instandhaltung und Organisation unserer Moschee und bewahren sie als einen Ort der Besinnung und Spiritualität."
+      },
+      "item2": {
+        "title": "Organisation der Gebete",
+        "description": "Wir erleichtern die Verrichtung der täglichen Gebete, des Freitagsgebets (Salat al-Jumu'ah) und der besonderen Gebete während des heiligen Monats Ramadan und der islamischen Feiertage."
+      },
+      "item3": {
+        "title": "Gemeinschaftsarbeit",
+        "description": "Wir bemühen uns, die brüderlichen Bande innerhalb der muslimischen Gemeinschaft durch verschiedene Initiativen zu stärken, und wir organisieren soziale Veranstaltungen, um die Geselligkeit und den Austausch zu fördern. Wir bieten auch wertvolle Unterstützung für Familien und Menschen in Not."
+      },
+      "item4": {
+        "title": "Feier der islamischen Feiertage",
+        "description": "Wir begehen und feiern freudig und gemeinschaftlich die wichtigsten religiösen Feste wie: Eid al-Fitr (das Fest des Fastenbrechens am Ende des Ramadan). Eid al-Adha (das Opferfest)."
+      },
+      "item5": {
+        "title": "Ramadan-Aktivitäten",
+        "description": "Während des gesegneten Monats Ramadan bieten wir spezielle Aktivitäten an, um die Spiritualität, die Besinnung und die Solidarität zu fördern."
+      },
+      "item6": {
+        "title": "Bildung und Dialog",
+        "description": "Wir bieten islamischen Unterricht für Kinder und Erwachsene an und tragen so zu einem besseren Verständnis unseres Glaubens bei. Wir engagieren uns auch aktiv im interkulturellen und interreligiösen Dialog, organisieren Informationsveranstaltungen für Nicht-Muslime und bieten Führungen durch unsere Moschee an, um die Entdeckung und das gegenseitige Verständnis zu fördern."
+      }
+    },
+    "participation": {
+      "title": "Kontakt und Teilnahme",
+      "description": "Wir öffnen unsere Türen herzlich für alle, die an unseren Aktivitäten teilnehmen, den Reichtum der islamischen Kultur entdecken und sich mit unserer Gemeinschaft austauschen möchten. Zögern Sie nicht, uns bei Fragen zu kontaktieren oder sich an unseren Initiativen zu beteiligen."
+    }
+  },
+  "education": {
+    "title": "Bildung"
+  }
+}
