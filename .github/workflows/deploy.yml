@@ -29,4 +29,6 @@ jobs:
           username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /public_html/ # or your Hostinger directory
+          server-dir: / # or your Hostinger directory
+          dangerous-clean-slate: true # This deletes ALL files in the target dir
+          dry-run: false # Set to true first to test what would be deleted
