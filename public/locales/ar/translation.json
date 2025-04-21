@@ -109,6 +109,28 @@
     }
   },
   "education": {
-    "title": "التعليم"
+    "title": "التعليم",
+    "description": "نقدم دروساً في اللغة العربية والقرآن الكريم للأطفال من مختلف الأعمار والمستويات.",
+    "registrationForm": "نموذج التسجيل",
+    "parentInfo": "معلومات الوالدين",
+    "parentName": "اسم الوالد/ة",
+    "phone": "رقم الهاتف",
+    "email": "البريد الإلكتروني",
+    "childrenInfo": "معلومات الأطفال",
+    "child": "الطفل",
+    "childName": "اسم الطفل",
+    "age": "العمر",
+    "course": "الدورة",
+    "arabicCourse": "دورة اللغة العربية",
+    "quranCourse": "دورة القرآن الكريم",
+    "level": "المستوى",
+    "beginnerLevel": "مبتدئ",
+    "intermediateLevel": "متوسط",
+    "advancedLevel": "متقدم",
+    "addChild": "إضافة طفل آخر",
+    "remove": "حذف",
+    "submit": "تسجيل",
+    "registrationSuccess": "تم التسجيل بنجاح! سنتواصل معكم قريباً.",
+    "registrationError": "حدث خطأ في التسجيل. يرجى المحاولة مرة أخرى لاحقاً."
   }
 }

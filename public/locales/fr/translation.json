@@ -109,6 +109,28 @@
     }
   },
   "education": {
-    "title": "Éducation"
+    "title": "Éducation",
+    "description": "Nous proposons des cours d'arabe et de Coran pour les enfants de différents âges et niveaux.",
+    "registrationForm": "Formulaire d'inscription",
+    "parentInfo": "Informations sur les parents",
+    "parentName": "Nom des parents",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "childrenInfo": "Informations sur les enfants",
+    "child": "Enfant",
+    "childName": "Nom de l'enfant",
+    "age": "Âge",
+    "course": "Cours",
+    "arabicCourse": "Cours d'arabe",
+    "quranCourse": "Cours de Coran",
+    "level": "Niveau",
+    "beginnerLevel": "Débutant",
+    "intermediateLevel": "Intermédiaire",
+    "advancedLevel": "Avancé",
+    "addChild": "Ajouter un autre enfant",
+    "remove": "Supprimer",
+    "submit": "S'inscrire",
+    "registrationSuccess": "Inscription réussie ! Nous vous contacterons bientôt.",
+    "registrationError": "Une erreur s'est produite lors de l'inscription. Veuillez réessayer plus tard."
   }
 }
