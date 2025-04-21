@@ -15,7 +15,7 @@ export default function About() {
     <div className="min-h-screen" dir={`${isRTL ? "rtl" : "ltr"}`}>
       <div className="relative h-[50vh] bg-cover bg-center">
         <div className="absolute inset-0 bg-gradient-to-r from-[#262262]/80 to-[#009245]/80" />
-        <div className="relative container mx-auto pt-10 h-full flex flex-col gap-4">
+        <div className="relative container mx-auto px-4 pt-10 h-full flex flex-col gap-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white">
             {t("about.title")}
           </h1>
