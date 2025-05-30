@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function ContactUs() {
@@ -14,14 +14,6 @@ export default function ContactUs() {
       </h2>
       <div className="space-y-6">
         <div className={`flex items-center ${isRTL ? "flex-row-reverse" : ""}`}>
-          <Phone
-            className={`h-6 w-6 text-[#009245] flex-shrink-0 ${
-              isRTL ? "mr-0 ml-3" : "mr-3"
-            }`}
-          />
-          <span className="text-gray-700">+49 XXX XXXXXX</span>
-        </div>
-        <div className={`flex items-center ${isRTL ? "flex-row-reverse" : ""}`}>
           <Mail
             className={`h-6 w-6 text-[#009245] flex-shrink-0 ${
               isRTL ? "mr-0 ml-3" : "mr-3"
@@ -29,6 +21,23 @@ export default function ContactUs() {
           />
           <span className="text-gray-700">info@alsalam-loerrach.org</span>
         </div>
+        <a
+          href="https://chat.whatsapp.com/DrdjKhcPAmULfTklnMuhM9"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`flex items-center ${
+            isRTL ? "flex-row-reverse" : ""
+          } hover:text-[#009245] transition-colors`}
+        >
+          <MessageCircle
+            className={`h-6 w-6 text-[#009245] flex-shrink-0 ${
+              isRTL ? "mr-0 ml-3" : "mr-3"
+            }`}
+          />
+          <span className="text-gray-700 hover:text-[#009245]">
+            Al-Salam e. V. WhatsApp Group
+          </span>
+        </a>
         <div className={`flex items-center ${isRTL ? "flex-row-reverse" : ""}`}>
           <MapPin
             className={`h-6 w-6 text-[#009245] flex-shrink-0 ${

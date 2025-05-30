@@ -1,40 +1,32 @@
 import { useTranslation } from "react-i18next";
+import { Button } from "./ui/Button";
 
 export default function LangSwitcher() {
   const { i18n } = useTranslation();
 
   return (
     <div className="flex gap-2">
-      <button
+      <Button
         onClick={() => i18n.changeLanguage("de")}
-        className={`px-3 py-1 rounded transition-colors ${
-          i18n.language === "de"
-            ? "bg-[#009245] text-white"
-            : "bg-gray-100 text-[#262262] hover:bg-gray-200"
-        }`}
+        variant={i18n.language === "de" ? "primary" : "secondary"}
+        size="sm"
       >
         DE
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => i18n.changeLanguage("ar")}
-        className={`px-3 py-1 rounded transition-colors ${
-          i18n.language === "ar"
-            ? "bg-[#009245] text-white"
-            : "bg-gray-100 text-[#262262] hover:bg-gray-200"
-        }`}
+        variant={i18n.language === "ar" ? "primary" : "secondary"}
+        size="sm"
       >
         عربي
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => i18n.changeLanguage("fr")}
-        className={`px-3 py-1 rounded transition-colors ${
-          i18n.language === "fr"
-            ? "bg-[#009245] text-white"
-            : "bg-gray-100 text-[#262262] hover:bg-gray-200"
-        }`}
+        variant={i18n.language === "fr" ? "primary" : "secondary"}
+        size="sm"
       >
         FR
-      </button>
+      </Button>
     </div>
   );
 }

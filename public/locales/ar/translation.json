@@ -1,5 +1,12 @@
 {
   "welcome": "مرحباً بكم في السلام",
+  "nav": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "education": "التعليم",
+    "prayerTimes": "أوقات الصلاة"
+  },
+  "home": "الرئيسية",
   "subtitle": "المركز الإسلامي برمباخ - لوراخ",
   "heroTitle": "مكان للسلام والمجتمع",
   "heroSubtitle": "اكتشف خدماتنا المتنوعة للجالية المسلمة في لوراخ",
@@ -24,18 +31,22 @@
   "footerText": "مكان للقاء والصلاة والتعلم",
   "copyRight": "السلام: الجمعية الاسلامية ببرمباخ لوراخ",
   "hijriMonths": {
-    "muharram": "محرم",
-    "safar": "صفر",
-    "rabialawal": "ربيع الأول",
-    "rabialthani": "ربيع الثاني",
-    "jumadalawal": "جمادى الأولى",
-    "jumadalthani": "جمادى الثانية",
-    "rajab": "رجب",
-    "shaban": "شعبان",
-    "ramadan": "رمضان",
-    "shawwal": "شوال",
-    "dhualqida": "ذو القعدة",
-    "dhualhijja": "ذو الحجة"
+    "Muḥarram": "محرم",
+    "Ṣafar": "صفر",
+    "Rabīʿ al-awwal": "ربيع الأول",
+    "Rabīʿ al-thānī": "ربيع الثاني",
+    "Jumādá al-ūlá": "جمادى الأولى",
+    "Jumādá al-ākhirah": "جمادى الثانية",
+    "Rajab": "رجب",
+    "Shaʿbān": "شعبان",
+    "Ramaḍān": "رمضان",
+    "Shawwāl": "شوال",
+    "Dhū al-Qaʿdah": "ذو القعدة",
+    "Dhū al-Ḥijjah": "ذو الحجة"
+  },
+  "errors": {
+    "fetchPrayerTimes": "حدث خطأ أثناء جلب أوقات الصلاة. يرجى المحاولة مرة أخرى لاحقاً.",
+    "invalidTimeFormat": "تنسيق وقت غير صالح في أوقات الصلاة. يرجى المحاولة مرة أخرى لاحقاً."
   },
   "about": {
     "title": "من نحن",
@@ -109,6 +120,37 @@
     }
   },
   "education": {
-    "title": "التعليم"
+    "title": "التعليم",
+    "description": "نقدم دروساً في اللغة العربية والقرآن الكريم للأطفال من مختلف الأعمار والمستويات.",
+    "registrationForm": "نموذج التسجيل",
+    "parentInfo": "معلومات الوالدين",
+    "parentName": "اسم الوالد/ة",
+    "phone": "رقم الهاتف",
+    "email": "البريد الإلكتروني",
+    "childrenInfo": "معلومات الأطفال",
+    "child": "الطفل",
+    "childName": "اسم الطفل",
+    "age": "العمر",
+    "course": "الدورة",
+    "arabicCourse": "دورة اللغة العربية",
+    "quranCourse": "دورة القرآن الكريم",
+    "level": "المستوى",
+    "beginnerLevel": "مبتدئ",
+    "intermediateLevel": "متوسط",
+    "advancedLevel": "متقدم",
+    "addChild": "إضافة طفل آخر",
+    "remove": "حذف",
+    "submit": "تسجيل",
+    "registrationSuccess": "تم التسجيل بنجاح! سنتواصل معكم قريباً.",
+    "registrationError": "حدث خطأ في التسجيل. يرجى المحاولة مرة أخرى لاحقاً.",
+    "selectMonth": "الرجاء اختيار شهر",
+    "fetchError": "حدث خطأ في جلب مواقيت الصلاة. يرجى المحاولة مرة أخرى لاحقاً.",
+    "loading": "جاري التحميل...",
+    "dateFormat": "d MMMM yyyy"
+  },
+  "tableHeaders": {
+    "date": "اليوم",
+    "hijriDate": "التقويم الهجري",
+    "prayerTimes": "مواقيت الصلاة"
   }
 }

@@ -1,5 +1,12 @@
 {
   "welcome": "Bienvenue à Al Salam",
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "education": "Éducation",
+    "prayerTimes": "Horaires des prières"
+  },
+  "home": "Accueil",
   "subtitle": "Centre Islamique de Brombach-Lörrach",
   "heroTitle": "Un lieu de paix et de communauté",
   "heroSubtitle": "Découvrez nos services variés pour la communauté musulmane de Lörrach",
@@ -24,18 +31,22 @@
   "footerText": "Un lieu de rencontre, de prière et d'apprentissage",
   "copyRight": "Al Salam Centre Islamic à Brombach Lörrach",
   "hijriMonths": {
-    "muharram": "Mouharram",
-    "safar": "Safar",
-    "rabialawal": "Rabi al-Awal",
-    "rabialthani": "Rabi al-Thani",
-    "jumadalawal": "Joumada al-Awal",
-    "jumadalthani": "Joumada al-Thani",
-    "rajab": "Rajab",
-    "shaban": "Chaabane",
-    "ramadan": "Ramadan",
-    "shawwal": "Chawwal",
-    "dhualqida": "Dhou al-Qida",
-    "dhualhijja": "Dhou al-Hijja"
+    "Muḥarram": "Mouharram",
+    "Ṣafar": "Safar",
+    "Rabīʿ al-awwal": "Rabi al-Awal",
+    "Rabīʿ al-thānī": "Rabi al-Thani",
+    "Jumādá al-ūlá": "Joumada al-Awal",
+    "Jumādá al-ākhirah": "Joumada al-Thani",
+    "Rajab": "Rajab",
+    "Shaʿbān": "Chaabane",
+    "Ramaḍān": "Ramadan",
+    "Shawwāl": "Chawwal",
+    "Dhū al-Qaʿdah": "Dhou al-Qida",
+    "Dhū al-Ḥijjah": "Dhou al-Hijja"
+  },
+  "errors": {
+    "fetchPrayerTimes": "Erreur lors de la récupération des horaires de prière. Veuillez réessayer plus tard.",
+    "invalidTimeFormat": "Format d'heure invalide dans les horaires de prière. Veuillez réessayer plus tard."
   },
   "about": {
     "title": "À propos",
@@ -109,6 +120,37 @@
     }
   },
   "education": {
-    "title": "Éducation"
+    "title": "Éducation",
+    "description": "Nous proposons des cours d'arabe et de Coran pour les enfants de différents âges et niveaux.",
+    "registrationForm": "Formulaire d'inscription",
+    "parentInfo": "Informations sur les parents",
+    "parentName": "Nom des parents",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "childrenInfo": "Informations sur les enfants",
+    "child": "Enfant",
+    "childName": "Nom de l'enfant",
+    "age": "Âge",
+    "course": "Cours",
+    "arabicCourse": "Cours d'arabe",
+    "quranCourse": "Cours de Coran",
+    "level": "Niveau",
+    "beginnerLevel": "Débutant",
+    "intermediateLevel": "Intermédiaire",
+    "advancedLevel": "Avancé",
+    "addChild": "Ajouter un autre enfant",
+    "remove": "Supprimer",
+    "submit": "S'inscrire",
+    "registrationSuccess": "Inscription réussie ! Nous vous contacterons bientôt.",
+    "registrationError": "Une erreur s'est produite lors de l'inscription. Veuillez réessayer plus tard.",
+    "selectMonth": "Veuillez sélectionner un mois",
+    "fetchError": "Erreur lors de la récupération des horaires de prière. Veuillez réessayer plus tard.",
+    "loading": "Chargement...",
+    "dateFormat": "d MMMM yyyy"
+  },
+  "tableHeaders": {
+    "date": "Jour",
+    "hijriDate": "Calendrier Hégirien",
+    "prayerTimes": "Horaires"
   }
 }

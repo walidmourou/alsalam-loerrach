@@ -1,5 +1,12 @@
 {
   "welcome": "Willkommen bei Al Salam",
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "education": "Bildung",
+    "prayerTimes": "Gebetszeiten"
+  },
+  "home": "Startseite",
   "subtitle": "Islamisches Zentrum Brombach-Lörrach",
   "heroTitle": "Ein Ort des Friedens und der Gemeinschaft",
   "heroSubtitle": "Entdecken Sie unsere vielfältigen Angebote für die muslimische Gemeinschaft in Lörrach",
@@ -24,18 +31,18 @@
   "footerText": "Ein Ort der Begegnung, des Gebets und des Lernens",
   "copyRight": "Al Salam Islamic Center Brombach Lörrach",
   "hijriMonths": {
-    "muharram": "Muharram",
-    "safar": "Safar",
-    "rabialawal": "Rabi al-Awal",
-    "rabialthani": "Rabi al-Thani",
-    "jumadalawal": "Jumada al-Awal",
-    "jumadalthani": "Jumada al-Thani",
-    "rajab": "Rajab",
-    "shaban": "Shaban",
-    "ramadan": "Ramadan",
-    "shawwal": "Shawwal",
-    "dhualqida": "Dhu al-Qida",
-    "dhualhijja": "Dhu al-Hijja"
+    "Muḥarram": "Muharram",
+    "Ṣafar": "Safar",
+    "Rabīʿ al-awwal": "Rabi al-Awal",
+    "Rabīʿ al-thānī": "Rabi al-Thani",
+    "Jumādá al-ūlá": "Jumada al-Awal",
+    "Jumādá al-ākhirah": "Jumada al-Thani",
+    "Rajab": "Rajab",
+    "Shaʿbān": "Shaban",
+    "Ramaḍān": "Ramadan",
+    "Shawwāl": "Shawwal",
+    "Dhū al-Qaʿdah": "Dhu al-Qida",
+    "Dhū al-Ḥijjah": "Dhu al-Hijja"
   },
   "about": {
     "title": "Über uns",
@@ -108,7 +115,42 @@
       "description": "Wir öffnen unsere Türen herzlich für alle, die an unseren Aktivitäten teilnehmen, den Reichtum der islamischen Kultur entdecken und sich mit unserer Gemeinschaft austauschen möchten. Zögern Sie nicht, uns bei Fragen zu kontaktieren oder sich an unseren Initiativen zu beteiligen."
     }
   },
+  "errors": {
+    "fetchPrayerTimes": "Fehler beim Abrufen der Gebetszeiten. Bitte versuchen Sie es später erneut.",
+    "invalidTimeFormat": "Ungültiges Zeitformat in den Gebetszeiten. Bitte versuchen Sie es später erneut."
+  },
   "education": {
-    "title": "Bildung"
+    "title": "Bildung",
+    "description": "Wir bieten Arabisch- und Koranunterricht für Kinder in verschiedenen Altersgruppen und Niveaus an.",
+    "registrationForm": "Anmeldeformular",
+    "parentInfo": "Elterninformationen",
+    "parentName": "Name der Eltern",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "childrenInfo": "Kinderinformationen",
+    "child": "Kind",
+    "childName": "Name des Kindes",
+    "age": "Alter",
+    "course": "Kurs",
+    "arabicCourse": "Arabischkurs",
+    "quranCourse": "Korankurs",
+    "level": "Niveau",
+    "beginnerLevel": "Anfänger",
+    "intermediateLevel": "Mittelstufe",
+    "advancedLevel": "Fortgeschritten",
+    "addChild": "Weiteres Kind hinzufügen",
+    "remove": "Entfernen",
+    "submit": "Anmelden",
+    "registrationSuccess": "Anmeldung erfolgreich! Wir werden uns in Kürze bei Ihnen melden.",
+    "registrationError": "Bei der Anmeldung ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "selectMonth": "Bitte wählen Sie einen Monat aus",
+    "fetchError": "Fehler beim Abrufen der Gebetszeiten. Bitte versuchen Sie es später erneut.",
+    "loading": "Laden...",
+    "dateFormat": "d. MMMM yyyy"
+  },
+  "tableHeaders": {
+    "date": "Tag",
+    "hijriDate": "Islamischer Kalender",
+    "prayerTimes": "Gebetszeiten"
   }
 }
