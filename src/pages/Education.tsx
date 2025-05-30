@@ -52,7 +52,7 @@ export default function Education() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${config.apiUrl}/api/register`, {
+      const response = await fetch(`${config.apiUrl}/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

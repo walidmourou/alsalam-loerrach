@@ -1,125 +1,113 @@
-import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import LangSwitcher from "./LangSwitcher";
 
-const Header = () => {
+export default function Header() {
   const { t, i18n } = useTranslation();
-  const isRTL = i18n.language === "ar";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const isRTL = i18n.language === "ar";
+  const navigation = [
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.prayerTimes"), href: "/prayer-times" },
+    { name: t("nav.education"), href: "/education" },
+  ];
 
-  const isLinkActive = (path: string) => location.pathname === path;
+  const isActiveLink = (href: string) =>
+    location.pathname === href ||
+    (href !== "/" && location.pathname.startsWith(href));
 
   return (
-    <header className="bg-white shadow-md">
-      <nav className="container mx-auto px-4 py-4">
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="container mx-auto px-4 py-3">
         <div
-          className={`flex justify-between items-center ${
+          className={`flex items-center justify-between ${
             isRTL ? "flex-row-reverse" : ""
           }`}
         >
-          <Link
-            to="/"
-            className={`flex items-center gap-2 ${
+          <div
+            className={`flex items-center gap-8 ${
               isRTL ? "flex-row-reverse" : ""
             }`}
           >
-            <img src="images/logo.svg" className="h-14 w-14" />
-            <div>
-              <div className="text-2xl font-bold text-[#262262]">
-                {t("welcome")}
+            <Link
+              to="/"
+              className={`flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+            >
+              <img
+                src="/images/logo.svg"
+                alt="Al Salam Logo"
+                className="h-15 w-15 mx-2"
+              />
+              <div>
+                <div className="text-l font-bold text-[#262262]">
+                  {t("welcome")}
+                </div>
+                <div className="text-[#009245]">{t("subtitle")}</div>
               </div>
-              <div className="text-l text-[#009245]">{t("subtitle")}</div>
-            </div>
-          </Link>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div
-            className={`hidden md:flex items-center space-x-4 ${
-              isRTL ? "flex-row-reverse space-x-reverse" : ""
-            }`}
-          >
-            <Link
-              to="/about"
-              className={`font-bold px-3 py-2 rounded-md ${
-                isLinkActive("/about") ? "bg-green-100" : "hover:bg-green-50"
+            <div
+              className={`hidden lg:flex items-center gap-6 ${
+                isRTL ? "flex-row-reverse" : ""
               }`}
             >
-              {t("about.title")}
-            </Link>
-            <Link
-              to="/education"
-              className={`font-bold px-3 py-2 rounded-md ${
-                isLinkActive("/education")
-                  ? "bg-green-100"
-                  : "hover:bg-green-50"
-              }`}
-            >
-              {t("education.title")}
-            </Link>
+              {navigation.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={`text-sm font-medium transition-colors ${
+                    isActiveLink(item.href)
+                      ? "text-[#009245]"
+                      : "text-[#262262] hover:text-[#009245]"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
 
-          {/* Hamburger Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <div className="flex items-center gap-4">
+            <LangSwitcher />
+            <button
+              className="lg:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <X className="h-6 w-6 text-[#262262]" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <Menu className="h-6 w-6 text-[#262262]" />
               )}
-            </svg>
-          </button>
-
-          <LangSwitcher />
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 space-y-2">
-            <Link
-              to="/about"
-              className={`block font-bold px-3 py-2 rounded-md ${
-                isLinkActive("/about") ? "bg-green-100" : "hover:bg-green-50"
-              }`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t("about.title")}
-            </Link>
-            <Link
-              to="/education"
-              className={`block font-bold px-3 py-2 rounded-md ${
-                isLinkActive("/education")
-                  ? "bg-green-100"
-                  : "hover:bg-green-50"
-              }`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t("education.title")}
-            </Link>
+          <div className="lg:hidden mt-4 space-y-2">
+            {navigation.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={`block py-2 text-sm font-medium transition-colors ${
+                  isRTL ? "text-right" : ""
+                } ${
+                  isActiveLink(item.href)
+                    ? "text-[#009245]"
+                    : "text-[#262262] hover:text-[#009245]"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
         )}
       </nav>
     </header>
   );
-};
-
-export default Header;
+}

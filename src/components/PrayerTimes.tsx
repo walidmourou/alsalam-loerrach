@@ -1,153 +1,159 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { format } from "date-fns";
-import { ar, de, fr } from "date-fns/locale";
+import { PrayerTimesData, locales } from "../types/prayerTimes";
+import { fetchMonthPrayerTimes } from "../utils/prayerTimesService";
+import { ErrorBoundary } from "./ErrorBoundary";
 
-interface PrayerTimesData {
-  fajr: string;
-  sunrise: string;
-  dhuhr: string;
-  asr: string;
-  maghrib: string;
-  isha: string;
+function PrayerTimeRow({
+  label,
+  time,
+  isRTL,
+}: {
+  label: string;
+  time: string;
+  isRTL?: boolean;
+}) {
+  return (
+    <div
+      className={`flex justify-between items-center py-2 border-b border-gray-100 ${
+        isRTL ? "flex-row-reverse" : ""
+      }`}
+    >
+      <span className="font-medium text-[#262262]">{label}</span>
+      <span className="text-[#009245]">{time}</span>
+    </div>
+  );
 }
 
-interface HijriDate {
-  day: string;
-  month: string;
-  year: string;
-}
-
-const locales = {
-  ar,
-  de,
-  fr,
-};
-
-export default function PrayerTimes() {
+function PrayerTimesContent() {
   const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
   const [prayerTimes, setPrayerTimes] = useState<PrayerTimesData | null>(null);
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [hijriDate, setHijriDate] = useState<HijriDate | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const currentLocale = locales[i18n.language as keyof typeof locales] || de;
-
-  const getHijriMonthTranslation = (month: string) => {
-    const normalizedMonth = month
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase();
-
-    const monthMap: { [key: string]: string } = {
-      muharram: "muharram",
-      safar: "safar",
-      "rabi al-awwal": "rabialawal",
-      "rabi al-thani": "rabialthani",
-      "jumada al-awwal": "jumadalawal",
-      "jumada al-thani": "jumadalthani",
-      rajab: "rajab",
-      shaban: "shaban",
-      ramadan: "ramadan",
-      shawwal: "shawwal",
-      "dhul-qidah": "dhualqida",
-      "dhul-hijjah": "dhualhijja",
-    };
-
-    const key = monthMap[normalizedMonth] || normalizedMonth;
-    return t(`hijriMonths.${key}`) || month;
-  };
+  const currentLocale =
+    locales[i18n.language as keyof typeof locales] || locales.de;
 
   useEffect(() => {
-    const fetchPrayerTimes = async () => {
+    const loadPrayerTimes = async () => {
       try {
-        const response = await fetch(
-          "https://api.aladhan.com/v1/timingsByCity?city=Lorrach&country=Germany&method=3"
-        );
-        const data = await response.json();
-        setPrayerTimes({
-          fajr: data.data.timings.Fajr,
-          sunrise: data.data.timings.Sunrise,
-          dhuhr: data.data.timings.Dhuhr,
-          asr: data.data.timings.Asr,
-          maghrib: data.data.timings.Maghrib,
-          isha: data.data.timings.Isha,
-        });
-        setHijriDate({
-          day: data.data.date.hijri.day,
-          month: data.data.date.hijri.month.en,
-          year: data.data.date.hijri.year,
-        });
-      } catch (error) {
-        console.error("Error fetching prayer times:", error);
+        setIsLoading(true);
+        setError(null);
+        const times = await fetchMonthPrayerTimes(currentTime);
+        const todayIndex = currentTime.getDate() - 1;
+        const todayTimes = times[todayIndex];
+        setPrayerTimes(todayTimes);
+      } catch (err) {
+        console.error("Error loading prayer times:", err);
+        if (
+          err instanceof Error &&
+          err.message.includes("Invalid time format")
+        ) {
+          setError(t("errors.invalidTimeFormat"));
+        } else {
+          setError(t("errors.fetchPrayerTimes"));
+        }
+      } finally {
+        setIsLoading(false);
       }
     };
 
-    fetchPrayerTimes();
-    const interval = setInterval(() => {
-      setCurrentTime(new Date());
-      if (currentTime.getHours() === 0 && currentTime.getMinutes() === 0) {
-        fetchPrayerTimes();
+    loadPrayerTimes();
+
+    // Update current time every minute
+    const timeInterval = setInterval(() => {
+      const now = new Date();
+      setCurrentTime(now);
+
+      // Refresh prayer times at midnight
+      if (now.getHours() === 0 && now.getMinutes() === 0) {
+        loadPrayerTimes();
       }
-    }, 1000);
+    }, 60000);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(timeInterval);
+  }, [t]);
 
-  if (!prayerTimes || !hijriDate) {
-    return <div className="text-center text-gray-600">Loading...</div>;
+  if (isLoading) {
+    return (
+      <div className="bg-white rounded-lg shadow-lg p-6 flex items-center justify-center min-h-[400px]">
+        <div className="text-[#262262]">{t("loading")}</div>
+      </div>
+    );
   }
 
-  const isRTL = i18n.language === "ar";
+  if (error) {
+    return (
+      <div className="bg-white rounded-lg shadow-lg p-6 flex items-center justify-center min-h-[400px]">
+        <div className="text-red-500">{error}</div>
+      </div>
+    );
+  }
+
+  if (!prayerTimes) {
+    return null;
+  }
 
   return (
-    <section>
-      <div className="bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto border-t-4 border-primary">
-        <h2
-          className={`flex justify-center text-2xl font-bold text-center mb-4 text-primary ${
-            isRTL ? "text-right" : "text-left"
+    <section className="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#009245]">
+      <h2 className="text-center text-2xl font-bold text-[#262262] mb-6">
+        {t("prayerTimes")}
+      </h2>
+
+      <div className="mb-6 text-center space-y-1">
+        <p className="text-[#009245] font-semibold">
+          {format(currentTime, "EEEE, d MMMM yyyy", { locale: currentLocale })}
+        </p>
+        <p
+          className={`flex gap-1 justify-center text-[#262262] font-medium ${
+            isRTL ? "flex-row-reverse" : ""
           }`}
         >
-          {t("prayerTimes")}
-        </h2>
+          <div>{prayerTimes.hijriDay}</div>
+          <div>{t(`hijriMonths.${prayerTimes.hijriMonth?.en}`)}</div>
+          <div>{prayerTimes.hijriYear}</div>
+        </p>
+      </div>
 
-        <div className="text-center mb-6">
-          <div className="text-2xl font-semibold text-secondary">
-            {format(currentTime, "HH:mm:ss")}
-          </div>
-          <div className="text-sm text-gray-600 mt-1">
-            {format(currentTime, "EEEE, d MMMM yyyy", {
-              locale: currentLocale,
-            })}
-          </div>
-          <div
-            className="text-sm text-gray-600"
-            dir={i18n.language === "ar" ? "rtl" : "ltr"}
-          >
-            {hijriDate.day} {getHijriMonthTranslation(hijriDate.month)}{" "}
-            {hijriDate.year} {i18n.language === "ar" ? "هجري" : "AH"}
-          </div>
-        </div>
-
-        <div className="space-y-3">
-          {Object.entries(prayerTimes).map(([prayer, time]) => (
-            <div
-              key={prayer}
-              className={`flex justify-between items-center p-3 rounded bg-gray-50 hover:bg-gray-100 transition-colors ${
-                isRTL ? "flex-row-reverse" : ""
-              }`}
-            >
-              <span
-                className={`font-medium text-primary ${
-                  isRTL ? "text-right" : "text-left"
-                }`}
-              >
-                {t(prayer)}
-              </span>
-              <span className="text-secondary font-semibold">{time}</span>
-            </div>
-          ))}
-        </div>
+      <div className="space-y-4">
+        <PrayerTimeRow
+          label={t("fajr")}
+          time={prayerTimes.fajr}
+          isRTL={isRTL}
+        />
+        <PrayerTimeRow
+          label={t("sunrise")}
+          time={prayerTimes.sunrise}
+          isRTL={isRTL}
+        />
+        <PrayerTimeRow
+          label={t("dhuhr")}
+          time={prayerTimes.dhuhr}
+          isRTL={isRTL}
+        />
+        <PrayerTimeRow label={t("asr")} time={prayerTimes.asr} isRTL={isRTL} />
+        <PrayerTimeRow
+          label={t("maghrib")}
+          time={prayerTimes.maghrib}
+          isRTL={isRTL}
+        />
+        <PrayerTimeRow
+          label={t("isha")}
+          time={prayerTimes.isha}
+          isRTL={isRTL}
+        />
       </div>
     </section>
+  );
+}
+
+export default function PrayerTimes() {
+  return (
+    <ErrorBoundary>
+      <PrayerTimesContent />
+    </ErrorBoundary>
   );
 }
